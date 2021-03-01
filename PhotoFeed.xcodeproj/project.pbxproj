@@ -30,9 +30,12 @@
 		6E765D1825ED30AA00663F0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E765D1725ED30AA00663F0D /* AppDelegate.swift */; };
 		6E765D2125ED30AC00663F0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E765D2025ED30AC00663F0D /* Assets.xcassets */; };
 		6E765D2425ED30AC00663F0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E765D2225ED30AC00663F0D /* LaunchScreen.storyboard */; };
-		6E765D2F25ED30AC00663F0D /* PhotoFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E765D2E25ED30AC00663F0D /* PhotoFeedTests.swift */; };
+		6E765D2F25ED30AC00663F0D /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E765D2E25ED30AC00663F0D /* FeedViewModelTests.swift */; };
 		6E765D3A25ED30AC00663F0D /* PhotoFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E765D3925ED30AC00663F0D /* PhotoFeedUITests.swift */; };
 		6E92F6D525ED6FF2007443CF /* FeedItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92F6D425ED6FF2007443CF /* FeedItemViewController.swift */; };
+		6E92F6E225EDA0ED007443CF /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92F6E125EDA0ED007443CF /* MockAPIService.swift */; };
+		6E92F6ED25EDA5EB007443CF /* photos.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E92F6EC25EDA5EB007443CF /* photos.json */; };
+		6E92F6F225EDA632007443CF /* MockContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92F6F125EDA632007443CF /* MockContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,12 +83,15 @@
 		6E765D2325ED30AC00663F0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E765D2525ED30AC00663F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E765D2A25ED30AC00663F0D /* PhotoFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E765D2E25ED30AC00663F0D /* PhotoFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedTests.swift; sourceTree = "<group>"; };
+		6E765D2E25ED30AC00663F0D /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
 		6E765D3025ED30AC00663F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E765D3525ED30AC00663F0D /* PhotoFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E765D3925ED30AC00663F0D /* PhotoFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedUITests.swift; sourceTree = "<group>"; };
 		6E765D3B25ED30AC00663F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E92F6D425ED6FF2007443CF /* FeedItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewController.swift; sourceTree = "<group>"; };
+		6E92F6E125EDA0ED007443CF /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		6E92F6EC25EDA5EB007443CF /* photos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = photos.json; sourceTree = "<group>"; };
+		6E92F6F125EDA632007443CF /* MockContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +236,10 @@
 		6E765D2D25ED30AC00663F0D /* PhotoFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E765D2E25ED30AC00663F0D /* PhotoFeedTests.swift */,
+				6E92F6E125EDA0ED007443CF /* MockAPIService.swift */,
+				6E92F6F125EDA632007443CF /* MockContext.swift */,
+				6E92F6EC25EDA5EB007443CF /* photos.json */,
+				6E765D2E25ED30AC00663F0D /* FeedViewModelTests.swift */,
 				6E765D3025ED30AC00663F0D /* Info.plist */,
 			);
 			path = PhotoFeedTests;
@@ -378,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E92F6ED25EDA5EB007443CF /* photos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +433,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E765D2F25ED30AC00663F0D /* PhotoFeedTests.swift in Sources */,
+				6E92F6E225EDA0ED007443CF /* MockAPIService.swift in Sources */,
+				6E92F6F225EDA632007443CF /* MockContext.swift in Sources */,
+				6E765D2F25ED30AC00663F0D /* FeedViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5VCBSASHYH;
 				INFOPLIST_FILE = PhotoFeedTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -651,7 +663,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5VCBSASHYH;
 				INFOPLIST_FILE = PhotoFeedTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
