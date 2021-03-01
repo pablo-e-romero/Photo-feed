@@ -11,7 +11,6 @@ protocol FeedViewControllerDelegate: AnyObject {
   func selectFeedItem(vc: FeedViewController, item: FeedItemViewModel)
 }
 
-
 class FeedViewController: UIViewController, MessagePresenter {
 
   private let viewModel: FeedViewModel
@@ -30,8 +29,7 @@ class FeedViewController: UIViewController, MessagePresenter {
     )
 
     collectionView.translatesAutoresizingMaskIntoConstraints = false
-    collectionView.backgroundColor = .white
-    
+
     collectionView.delegate = self
     collectionView.dataSource = self
 
@@ -53,7 +51,9 @@ class FeedViewController: UIViewController, MessagePresenter {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.view.addSubview(collectionView)
+    view.backgroundColor = .white
+
+    view.addSubview(collectionView)
     collectionView.edgesToSuperviewSafeArea()
 
     fetch()

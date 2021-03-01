@@ -27,13 +27,17 @@ class FeedCoordinator: Coordinator {
       viewModel: ctx.createFeedViewModel()
     )
 
+    owner = vc
+
     vc.delegate = self
     navVC.pushViewController(vc, animated: animated)
   }
 
   private func showFeedItemViewController(item: FeedItemViewModel, animated: Bool) {
-//    navVC?.showDetailViewController(vc, sender: <#T##Any?#>)
+    let vc = FeedItemViewController(item: item)
+    navVC?.pushViewController(vc, animated: animated)
   }
+  
 }
 
 extension FeedCoordinator: FeedViewControllerDelegate {
