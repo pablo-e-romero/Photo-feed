@@ -23,12 +23,16 @@ class FeedViewController: UIViewController, MessagePresenter {
       height: .ratio(value: 1)
     )
 
+    layout.minimumLineSpacing = 0
+    layout.minimumInteritemSpacing = 0
+
     let collectionView = UICollectionView(
       frame: .zero,
       collectionViewLayout: layout
     )
 
     collectionView.translatesAutoresizingMaskIntoConstraints = false
+    collectionView.backgroundColor = .white
 
     collectionView.delegate = self
     collectionView.dataSource = self
@@ -41,7 +45,9 @@ class FeedViewController: UIViewController, MessagePresenter {
   init(viewModel: FeedViewModel) {
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
-    self.title = "Photos Feed"
+    
+    self.navigationItem.title = "Photos Feed"
+    self.navigationItem.backButtonTitle = " "
   }
 
   required init?(coder: NSCoder) {
@@ -54,12 +60,14 @@ class FeedViewController: UIViewController, MessagePresenter {
     view.backgroundColor = .white
 
     view.addSubview(collectionView)
-    collectionView.edgesToSuperviewSafeArea()
+    collectionView.edgesToSuperview()
 
+    configureRefreshControl()
     fetch()
   }
 
   private func fetch() {
+    self.collectionView.refreshControl?.beginRefreshing()
     viewModel.fetch { [weak self] error in
       guard let self = self else { return }
       self.collectionView.refreshControl?.endRefreshing()
