@@ -13,7 +13,7 @@ class DependencyContainer {
 }
 
 protocol HasAPIService {
-    var apiService: APIServiceProtocol {get}
+    var apiService: APIServiceProtocol { get }
 }
 
 extension DependencyContainer: HasAPIService { }

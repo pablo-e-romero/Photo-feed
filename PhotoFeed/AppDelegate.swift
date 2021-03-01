@@ -11,17 +11,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  lazy var dependecyContainer = DependencyContainer()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-//    let storyboard = UIStoryboard(name: "Path", bundle: nil)
-//    let navVC = storyboard.instantiateInitialViewController() as! UINavigationController
-//    let pathVC = navVC.viewControllers.first as! PathViewController
-//    pathVC.viewModel = PathManager()
-//    window = UIWindow(frame: UIScreen.main.bounds)
-//    window?.rootViewController = navVC
-//    window?.makeKeyAndVisible()
+    let navVC = UINavigationController()
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.backgroundColor = .white
+    window?.rootViewController = navVC
+    window?.makeKeyAndVisible()
 
+    let feedCoordinator = FeedCoordinator(
+      context: dependecyContainer,
+      navVC: navVC)
+
+    feedCoordinator.start(animated: false)
+    
     return true
   }
 

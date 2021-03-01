@@ -9,17 +9,17 @@ import Foundation
 import UIKit
 
 protocol MessagePresenter {
-  func presentAlert(withError error: Error)
-  func presentAlert(withMessage message: String)
+  func presentAlert(with error: Error)
+  func presentAlert(with message: String)
 }
 
 extension MessagePresenter where Self: UIViewController {
 
-  func presentAlert(withError error: Error) {
-    presentAlert(withMessage: error.localizedDescription)
+  func presentAlert(with error: Error) {
+    presentAlert(with: error.localizedDescription)
   }
 
-  func presentAlert(withMessage message: String) {
+  func presentAlert(with message: String) {
     let alertController = UIAlertController(
       title: nil,
       message: message,
